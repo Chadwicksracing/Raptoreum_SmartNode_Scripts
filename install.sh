@@ -4,7 +4,7 @@ COIN_NAME='raptoreum'
 
 #wallet information
 BOOTSTRAP_TAR='https://github.com/Chadwicksracing/TestNET_Raptoreum_SmartNode/releases/download/Test/Jan_2022_bootstrap.gz'
-CONFIG_DIR='.raptoreumcore/testnet3'
+CONFIG_DIR='.raptoreumcore'
 CONFIG_FILE='raptoreum.conf'
 PORT='10227'
 SSHPORT='22'
@@ -303,7 +303,7 @@ function log_rotate() {
   sudo touch /etc/logrotate.d/rtmdebuglog
   sudo chown $USERNAME:$USERNAME /etc/logrotate.d/rtmdebuglog
   cat << EOF > /etc/logrotate.d/rtmdebuglog
-/home/$USERNAME/.raptoreumcore/testnet3/debug.log {
+/home/$USERNAME/.raptoreumcore/debug.log {
   compress
   copytruncate
   missingok
