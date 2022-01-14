@@ -1,9 +1,9 @@
 #!/bin/bash
 # URLs for raptoreum explorers. Main and backup one.
-URL=( 'https://explorer.raptoreum.com/' 'https://raptor.mopsus.com/' )
+URL=( 'https://testnet.raptoreum.com/' )
 URL_ID=0
 
-BOOTSTRAP_TAR='https://github.com/dk808/Raptoreum_SmartNode/releases/download/v1.0.0/rtm-bootstrap.tar.gz'
+BOOTSTRAP_TAR='https://github.com/Chadwicksracing/TestNET_Raptoreum_SmartNode/releases/download/Test/Jan_2022_bootstrap.gz'
 
 POSE_SCORE=0
 PREV_SCORE=0
@@ -27,7 +27,7 @@ if [[ -z $CONFIG_DIR ]]; then
   if [[ -z $HOME ]]; then
     HOME="/home/$USER/"
   fi
-  CONFIG_DIR="$HOME/.raptoreumcore/"
+  CONFIG_DIR="$HOME/.raptoreumcore/testnet3"
 fi
 
 function GetNumber () {

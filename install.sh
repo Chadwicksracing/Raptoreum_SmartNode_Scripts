@@ -3,10 +3,10 @@
 COIN_NAME='raptoreum'
 
 #wallet information
-BOOTSTRAP_TAR='https://github.com/dk808/Raptoreum_SmartNode/releases/download/v1.0.0/rtm-bootstrap.tar.gz'
-CONFIG_DIR='.raptoreumcore'
+BOOTSTRAP_TAR='https://github.com/Chadwicksracing/TestNET_Raptoreum_SmartNode/releases/download/Test/Jan_2022_bootstrap.gz'
+CONFIG_DIR='.raptoreumcore\testnet3'
 CONFIG_FILE='raptoreum.conf'
-PORT='10226'
+PORT='10227' # testnet port
 SSHPORT='22'
 COIN_DAEMON='raptoreumd'
 COIN_CLI='raptoreum-cli'
@@ -32,8 +32,9 @@ X_POINT="${BLINKRED}\xE2\x9D\x97${NC}"
 #
 
 echo -e "${YELLOW}==========================================================="
-echo -e 'RTM Smartnode Setup'
+echo -e 'TESTNET RTM Smartnode Setup'
 echo -e "===========================================================${NC}"
+echo -e "${RED}Jan 2022, Updated for TestNet SmartNode${NC}"
 echo -e "${BLUE}July 2021, created and updated by dk808 from AltTank${NC}"
 echo -e "${BLUE}With Smartnode healthcheck by Delgon${NC}"
 echo -e
@@ -150,13 +151,6 @@ maxconnections=125
 par=2
 dbcache=1024
 onlynet=ipv4
-addnode=209.151.150.72
-addnode=94.237.79.27
-addnode=95.111.216.12
-addnode=198.100.149.124
-addnode=198.100.146.111
-addnode=5.135.187.46
-addnode=5.135.179.95
 EOF
 }
 
@@ -167,7 +161,7 @@ function install_bins() {
   elif [[ $(lsb_release -r) = *20* ]]; then
     VERSION='ubuntu20'
   fi
-  WALLET_TAR=$(curl -s https://api.github.com/repos/dk808/Raptoreum_Smartnode/releases/latest | jq -r '.assets[] | select(.name|test("'$VERSION'.")) | .browser_download_url')
+  WALLET_TAR=$(curl -s https://github.com/Raptor3um/raptoreum/releases/tag/1.3.15.99 | jq -r '.assets[] | select(.name|test("'$VERSION'.")) | .browser_download_url') # TestNET
   mkdir temp
   curl -L $WALLET_TAR | tar xz -C ./temp; sudo mv ./temp/$COIN_DAEMON ./temp/$COIN_CLI ./temp/$COIN_TX $COIN_PATH
   sudo chmod 755 ${COIN_PATH}/${COIN_NAME}*
@@ -199,7 +193,7 @@ if [[ \$(lsb_release -r) = *18* ]]; then
 elif [[ \$(lsb_release -r) = *20* ]]; then
   VERSION='ubuntu20'
 fi
-WALLET_TAR=\$(curl -s https://api.github.com/repos/Raptor3um/raptoreum/releases/latest | jq -r '.assets[] | select(.name|test("'\$VERSION'.")) | .browser_download_url')
+WALLET_TAR=\$(curl -s https://github.com/Raptor3um/raptoreum/releases/tag/1.3.15.99 | jq -r '.assets[] | select(.name|test("'\$VERSION'.")) | .browser_download_url')
 COIN_NAME='raptoreum'
 COIN_DAEMON='raptoreumd'
 COIN_CLI='raptoreum-cli'
@@ -309,7 +303,7 @@ function log_rotate() {
   sudo touch /etc/logrotate.d/rtmdebuglog
   sudo chown $USERNAME:$USERNAME /etc/logrotate.d/rtmdebuglog
   cat << EOF > /etc/logrotate.d/rtmdebuglog
-/home/$USERNAME/.raptoreumcore/debug.log {
+/home/$USERNAME/.raptoreumcore/testnet3/debug.log {
   compress
   copytruncate
   missingok
@@ -330,7 +324,7 @@ function cron_job() {
       PROTX_HASH=$(whiptail --inputbox "Please enter your protx hash for this SmartNode" 8 51 3>&1 1>&2 2>&3)
     fi
   elif [[ ! -z $CRON_ANS ]]; then
-    cat <(curl -s https://raw.githubusercontent.com/dk808/Raptoreum_Smartnode/main/check.sh) >$HOME/check.sh
+    cat <(curl -s https://github.com/Chadwicksracing/TestNET_Raptoreum_SmartNode/blob/main/check.sh) >$HOME/check.sh
     sed -i "s/#NODE_PROTX=/NODE_PROTX=\"${PROTX_HASH}\"/g" $HOME/check.sh
     sudo chmod 775 $HOME/check.sh
     crontab -l | grep -v "SHELL=/bin/bash" | crontab -
@@ -371,7 +365,7 @@ STOP='\e[0m'
 X_POINT="\${BLINKRED}\xE2\x9D\x97\${NC}"
 
 printf "\${BLUE}"
-figlet -t -k "RTM  SMARTNODES"
+figlet -t -k "TESTNET RTM  SMARTNODES"
 printf "\${STOP}"
 
 echo -e "\${YELLOW}================================================================================================"
