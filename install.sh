@@ -224,7 +224,7 @@ Type=forking
 User=$USERNAME
 Group=$USERNAME
 WorkingDirectory=/home/$USERNAME/$CONFIG_DIR/
-ExecStart=$COIN_PATH/$COIN_DAEMON -datadir=/home/$USERNAME/$CONFIG_DIR/ -conf=/home/$USERNAME/$CONFIG_DIR/$CONFIG_FILE -daemon
+ExecStart=$COIN_PATH/$COIN_DAEMON -datadir=/home/$USERNAME/$CONFIG_DIR/ -conf=/home/$USERNAME/$CONFIG_DIR/$CONFIG_FILE -daemon -testnet
 ExecStop=$COIN_PATH/$COIN_CLI stop
 Restart=always
 RestartSec=3
@@ -379,8 +379,8 @@ echo -e "  STATUS  - \${CYAN}sudo systemctl status \$COIN_NAME\${NC}"
 echo -e "In the event server \${RED}reboots\${NC} daemon service will \${GREEN}auto-start\${NC}"
 echo
 echo -e "\${X_POINT}\${X_POINT} \${YELLOW}To use \$COIN_CLI simply start command with \$COIN_CLI" \${X_POINT}\${X_POINT}
-echo -e "     \${YELLOW}E.g \${CYAN}\$COIN_CLI getblockchaininfo\${NC}"
-echo -e "     \${YELLOW}E.g \${CYAN}\$COIN_CLI smartnode status\${NC}"
+echo -e "     \${YELLOW}E.g \${CYAN}\$COIN_CLI -testnet getblockchaininfo\${NC}"
+echo -e "     \${YELLOW}E.g \${CYAN}\$COIN_CLI -testnet smartnode status\${NC}"
 echo
 echo -e "\${YELLOW}To update binaries when new ones are released enter \${SEA}./update.sh\${NC}"
 echo -e "\${YELLOW}================================================================================================\${NC}"
