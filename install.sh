@@ -3,7 +3,7 @@
 COIN_NAME='raptoreum'
 
 #wallet information
-BOOTSTRAP_TAR='https://github.com/Chadwicksracing/TestNET_Raptoreum_SmartNode/releases/download/Test/Jan_2022_bootstrap.gz'
+BOOTSTRAP_TAR='https://github.com/Chadwicksracing/TestNET_Raptoreum_SmartNode/releases/download/Test/Jan_2022_bootstrap.tar.gz'
 CONFIG_DIR='.raptoreumcore'
 CONFIG_FILE='raptoreum.conf'
 PORT='10227'
@@ -287,7 +287,7 @@ function start_daemon() {
     MSG2=''
     echo && spinning_timer
     echo
-    $COIN_CLI getblockchaininfo
+    $COIN_CLI -testnet getblockchaininfo
   else
     echo -e "${RED}Something is not right the daemon did not start. Will exit out so try and run the script again.${NC}"
     exit
