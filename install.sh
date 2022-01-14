@@ -161,7 +161,7 @@ function install_bins() {
   elif [[ $(lsb_release -r) = *20* ]]; then
     VERSION='ubuntu20'
   fi
-  WALLET_TAR=$(curl -s https://github.com/Raptor3um/raptoreum/releases/tag/1.3.15.99 | jq -r '.assets[] | select(.name|test("'$VERSION'.")) | .browser_download_url')
+  WALLET_TAR='https://github.com/Raptor3um/raptoreum/releases/download/1.3.15.99/raptoreum_1.3.15.99_ubuntu20_64.tar.gz'
   mkdir temp
   curl -L $WALLET_TAR | tar xz -C ./temp; sudo mv ./temp/$COIN_DAEMON ./temp/$COIN_CLI ./temp/$COIN_TX $COIN_PATH
   sudo chmod 755 ${COIN_PATH}/${COIN_NAME}*
