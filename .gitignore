@@ -1,2 +1,16 @@
 
 BootStrap/Jan_2022_bootstrap.gz
+*.tar
+*.dat
+*.log
+*.zip
+*.gz
+*.ldb
+BootStrap/testnet3.old/blocks/index/CURRENT
+BootStrap/testnet3.old/blocks/index/MANIFEST-000371
+BootStrap/testnet3.old/chainstate/CURRENT
+BootStrap/testnet3.old/chainstate/MANIFEST-000575
+BootStrap/testnet3.old/evodb/CURRENT
+BootStrap/testnet3.old/evodb/MANIFEST-000338
+BootStrap/testnet3.old/llmq/CURRENT
+BootStrap/testnet3.old/llmq/MANIFEST-006715
