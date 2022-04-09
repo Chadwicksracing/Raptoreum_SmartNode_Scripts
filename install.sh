@@ -34,7 +34,7 @@ X_POINT="${BLINKRED}\xE2\x9D\x97${NC}"
 echo -e "${YELLOW}==========================================================="
 echo -e 'TESTNET RTM Smartnode Setup'
 echo -e "===========================================================${NC}"
-echo -e "${RED}Jan 2022, Updated for TestNet SmartNode${NC}"
+echo -e "${RED}April 2022, Updated for TestNet SmartNode${NC}"
 echo -e "${BLUE}July 2021, created and updated by dk808 from AltTank${NC}"
 echo -e "${BLUE}With Smartnode healthcheck by Delgon${NC}"
 echo -e
@@ -177,7 +177,7 @@ function bootstrap() {
     fi
   elif [[ ! -z $BOOTSTRAP_ANS ]]; then
     echo -e "${YELLOW}Downloading wallet bootstrap please be patient...${NC}"
-    curl -L $BOOTSTRAP_TAR | tar xz -C $HOME/$CONFIG_DIR/testnet4
+    curl -L $BOOTSTRAP_TAR | tar xz -C $HOME/$CONFIG_DIR/
   else
     echo -e "${YELLOW}Skipping bootstrap...${NC}"
   fi

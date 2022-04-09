@@ -27,7 +27,7 @@ if [[ -z $CONFIG_DIR ]]; then
   if [[ -z $HOME ]]; then
     HOME="/home/$USER/"
   fi
-  CONFIG_DIR="$HOME/.raptoreumcore/testnet4"
+  CONFIG_DIR="$HOME/.raptoreumcore/"
 fi
 
 function GetNumber () {
