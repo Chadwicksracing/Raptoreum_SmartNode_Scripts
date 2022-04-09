@@ -3,7 +3,7 @@
 URL=( 'https://testnet.raptoreum.com/' )
 URL_ID=0
 
-BOOTSTRAP_TAR='https://github.com/Chadwicksracing/TestNET_Raptoreum_SmartNode/releases/download/Test/Jan_2022_bootstrap.gz'
+BOOTSTRAP_TAR='https://github.com/Chadwicksracing/TestNET_Raptoreum_SmartNode/releases/download/1.3.17.99/April_2022_bootstrap.tar.gz'
 
 POSE_SCORE=0
 PREV_SCORE=0
@@ -27,7 +27,7 @@ if [[ -z $CONFIG_DIR ]]; then
   if [[ -z $HOME ]]; then
     HOME="/home/$USER/"
   fi
-  CONFIG_DIR="$HOME/.raptoreumcore/testnet3"
+  CONFIG_DIR="$HOME/.raptoreumcore/testnet4"
 fi
 
 function GetNumber () {

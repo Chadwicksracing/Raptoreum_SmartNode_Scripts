@@ -1,7 +1,7 @@
 #!/bin/bash
 
-DIR='/raptoreum/.raptoreumcore/testnet3'
-BOOTSTRAP_TAR='https://github.com/Chadwicksracing/TestNET_Raptoreum_SmartNode/releases/download/Test/Jan_2022_bootstrap.tar.gz'
+DIR='/raptoreum/.raptoreumcore/testnet4'
+BOOTSTRAP_TAR='https://github.com/Chadwicksracing/TestNET_Raptoreum_SmartNode/releases/download/1.3.17.99/April_2022_bootstrap.tar.gz'
 
 if [ ! -d $DIR ]; then
   mkdir -p $DIR

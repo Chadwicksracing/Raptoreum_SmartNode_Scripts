@@ -3,7 +3,7 @@
 COIN_NAME='raptoreum'
 
 #wallet information
-BOOTSTRAP_TAR='https://github.com/Chadwicksracing/TestNET_Raptoreum_SmartNode/releases/download/Test/Jan_2022_bootstrap.tar.gz'
+BOOTSTRAP_TAR='https://github.com/Chadwicksracing/TestNET_Raptoreum_SmartNode/releases/download/1.3.17.99/April_2022_bootstrap.tar.gz'
 CONFIG_DIR='.raptoreumcore'
 CONFIG_FILE='raptoreum.conf'
 PORT='10227'
@@ -161,7 +161,7 @@ function install_bins() {
   elif [[ $(lsb_release -r) = *20* ]]; then
     VERSION='ubuntu20'
   fi
-  WALLET_TAR='https://github.com/Chadwicksracing/TestNET_Raptoreum_SmartNode/releases/download/Test/raptoreum_1.3.15.99_ubuntu20_64.tar.gz'
+  WALLET_TAR='https://github.com/Chadwicksracing/TestNET_Raptoreum_SmartNode/releases/download/1.3.17.99/raptoreum-ubuntu20-1.3.17.99.tar.gz'
   mkdir temp
   curl -L $WALLET_TAR | tar xz -C ./temp; sudo mv ./temp/$COIN_DAEMON ./temp/$COIN_CLI ./temp/$COIN_TX $COIN_PATH
   sudo chmod 755 ${COIN_PATH}/${COIN_NAME}*
@@ -177,7 +177,7 @@ function bootstrap() {
     fi
   elif [[ ! -z $BOOTSTRAP_ANS ]]; then
     echo -e "${YELLOW}Downloading wallet bootstrap please be patient...${NC}"
-    curl -L $BOOTSTRAP_TAR | tar xz -C $HOME/$CONFIG_DIR
+    curl -L $BOOTSTRAP_TAR | tar xz -C $HOME/$CONFIG_DIR/testnet4
   else
     echo -e "${YELLOW}Skipping bootstrap...${NC}"
   fi
@@ -193,7 +193,7 @@ if [[ \$(lsb_release -r) = *18* ]]; then
 elif [[ \$(lsb_release -r) = *20* ]]; then
   VERSION='ubuntu20'
 fi
-WALLET_TAR=\$(curl -s https://github.com/Raptor3um/raptoreum/releases/tag/1.3.15.99 | jq -r '.assets[] | select(.name|test("'\$VERSION'.")) | .browser_download_url')
+WALLET_TAR=\$(curl -s https://github.com/Raptor3um/raptoreum/releases/tag/1.3.17.99 | jq -r '.assets[] | select(.name|test("'\$VERSION'.")) | .browser_download_url')
 COIN_NAME='raptoreum'
 COIN_DAEMON='raptoreumd'
 COIN_CLI='raptoreum-cli'
@@ -365,12 +365,13 @@ STOP='\e[0m'
 X_POINT="\${BLINKRED}\xE2\x9D\x97\${NC}"
 
 printf "\${BLUE}"
-figlet -t -k "TESTNET RTM  SMARTNODES"
+figlet -t -k "TESTNET4 RTM SMARTNODES"
 printf "\${STOP}"
 
 echo -e "\${YELLOW}================================================================================================"
 echo -e "\${CYAN}COURTESY OF DK808 FROM ALTTANK ARMY\${NC}"
 echo -e "\${CYAN}Smartnode healthcheck by Delgon\${NC}"
+echo -e "\${CYAN}Edited for TestNET by Chadwicksracing\${NC}"
 echo
 echo -e "\${YELLOW}Commands to manage \$COIN_NAME service\${NC}"
 echo -e "  TO START- \${CYAN}sudo systemctl start \$COIN_NAME\${NC}"
