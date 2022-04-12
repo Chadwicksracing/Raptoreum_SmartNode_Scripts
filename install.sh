@@ -151,6 +151,7 @@ maxconnections=125
 par=2
 dbcache=1024
 onlynet=ipv4
+testnet=1
 EOF
 }
 
@@ -224,7 +225,7 @@ Type=forking
 User=$USERNAME
 Group=$USERNAME
 WorkingDirectory=/home/$USERNAME/$CONFIG_DIR/
-ExecStart=$COIN_PATH/$COIN_DAEMON -datadir=/home/$USERNAME/$CONFIG_DIR/ -conf=/home/$USERNAME/$CONFIG_DIR/$CONFIG_FILE -daemon -testnet
+ExecStart=$COIN_PATH/$COIN_DAEMON -datadir=/home/$USERNAME/$CONFIG_DIR/ -conf=/home/$USERNAME/$CONFIG_DIR/$CONFIG_FILE --daemon
 ExecStop=$COIN_PATH/$COIN_CLI stop
 Restart=always
 RestartSec=3
