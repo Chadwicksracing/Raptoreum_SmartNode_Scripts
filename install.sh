@@ -3,7 +3,7 @@
 COIN_NAME='raptoreum'
 
 #wallet information
-BOOTSTRAP_TAR='https://github.com/dk808/Raptoreum_SmartNode/releases/download/v1.0.0/rtm-bootstrap.tar.gz'
+BOOTSTRAP_TAR='https://github.com/Flockpool/raptoreum/releases/download/bootstrap/bootstrap-mainnet.tar.xz'
 CONFIG_DIR='.raptoreumcore'
 CONFIG_FILE='raptoreum.conf'
 PORT='10226'
@@ -36,6 +36,7 @@ echo -e 'RTM Smartnode Setup'
 echo -e "===========================================================${NC}"
 echo -e "${BLUE}July 2021, created and updated by dk808 from AltTank${NC}"
 echo -e "${BLUE}With Smartnode healthcheck by Delgon${NC}"
+echo -e "Updated bootstrap for RaptorNodes May 2022"
 echo -e
 echo -e "${CYAN}Node setup starting, press [CTRL-C] to cancel.${NC}"
 sleep 5
