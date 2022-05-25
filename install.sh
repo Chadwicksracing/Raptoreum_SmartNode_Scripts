@@ -170,7 +170,7 @@ function install_bins() {
   fi
   WALLET_TAR=$(curl -s https://api.github.com/repos/dk808/Raptoreum_Smartnode/releases/latest | jq -r '.assets[] | select(.name|test("'$VERSION'.")) | .browser_download_url')
   mkdir temp
-  curl -L $WALLET_TAR | tar xz -C ./temp; sudo mv ./temp/$COIN_DAEMON ./temp/$COIN_CLI ./temp/$COIN_TX $COIN_PATH
+  curl -L $WALLET_TAR | tar xf -C ./temp; sudo mv ./temp/$COIN_DAEMON ./temp/$COIN_CLI ./temp/$COIN_TX $COIN_PATH
   sudo chmod 755 ${COIN_PATH}/${COIN_NAME}*
   rm -rf temp
 }
@@ -184,7 +184,7 @@ function bootstrap() {
     fi
   elif [[ ! -z $BOOTSTRAP_ANS ]]; then
     echo -e "${YELLOW}Downloading wallet bootstrap please be patient...${NC}"
-    curl -L $BOOTSTRAP_TAR | tar xf -C $HOME/$CONFIG_DIR # for xz archives the command needs to be xf
+    curl -L $BOOTSTRAP_TAR | tar xf -C $HOME/$CONFIG_DIR # for xz archives the command needs to be xf (gz is xz)
   else
     echo -e "${YELLOW}Skipping bootstrap...${NC}"
   fi
