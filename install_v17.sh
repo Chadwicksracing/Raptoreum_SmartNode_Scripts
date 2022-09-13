@@ -176,8 +176,6 @@ function install_bins() {
   curl -L $WALLET_TAR | tar xz -C ./temp; sudo mv ./temp/raptoreum-build/$COIN_DAEMON ./temp/raptoreum-build/$COIN_CLI ./temp/raptoreum-build/$COIN_TX $COIN_PATH
   sudo chmod 755 ${COIN_PATH}/${COIN_NAME}*
   rm -rf temp
-  wget $POWCACHE
-  sudo mv $HOME/powcache.dat $CONFIG_DIR/powcache.dat
 }
 
 BOOTSTRAP_ANS=""
@@ -221,6 +219,13 @@ sudo chmod 755 \${COIN_PATH}/\${COIN_NAME}*
 sudo systemctl start \$COIN_NAME > /dev/null 2>&1
 EOF
     sudo chmod 775 $HOME/update.sh
+}
+
+function powcache() {
+
+  wget $POWCACHE
+  sudo mv $HOME/powcache.dat $CONFIG_DIR/powcache.dat
+
 }
 
 function create_service() {
@@ -424,6 +429,7 @@ EOF
   install_packages
   install_bins
   create_conf
+  powcache
   bootstrap
   create_service
   basic_security
