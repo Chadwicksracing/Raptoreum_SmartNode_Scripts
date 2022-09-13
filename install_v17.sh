@@ -7,7 +7,7 @@ BOOTSTRAP_TAR='https://github.com/Chadwicksracing/TestNET_Raptoreum_SmartNode/re
 POWCACHE='https://bootstrap.raptoreum.com/powcaches/powcache.dat'
 CONFIG_DIR='.raptoreumcore'
 CONFIG_FILE='raptoreum.conf'
-PORT='10228'
+PORT='10226'
 SSHPORT='22'
 COIN_DAEMON='raptoreumd'
 COIN_CLI='raptoreum-cli'
@@ -173,7 +173,8 @@ function install_bins() {
   curl -L $WALLET_TAR | tar xz -C ./temp; sudo mv ./temp/raptoreum-build/$COIN_DAEMON ./temp/raptoreum-build/$COIN_CLI ./temp/raptoreum-build/$COIN_TX $COIN_PATH
   sudo chmod 755 ${COIN_PATH}/${COIN_NAME}*
   rm -rf temp
-  wget $POWCACHE $HOME/$CONFIG_DIR/
+  wget $POWCACHE
+  sudo mv ./POWcache.dat ./$CONFIG_DIR
 }
 
 BOOTSTRAP_ANS=""
@@ -285,7 +286,7 @@ EOF
 }
 
 function start_daemon() {
-  NUM='180'
+  NUM='15'
   MSG1='Starting daemon service & syncing chain please be patient this will take few min...'
   MSG=''
   if sudo systemctl start $COIN_NAME > /dev/null 2>&1; then
@@ -295,7 +296,7 @@ function start_daemon() {
     MSG2=''
     echo && spinning_timer
     echo
-    $COIN_CLI -testnet getblockchaininfo
+    $COIN_CLI getblockchaininfo
   else
     echo -e "${RED}Something is not right the daemon did not start. Will exit out so try and run the script again.${NC}"
     exit
