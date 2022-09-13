@@ -33,7 +33,7 @@ X_POINT="${BLINKRED}\xE2\x9D\x97${NC}"
 #
 
 echo -e "${YELLOW}==========================================================="
-echo -e 'TESTNET RTM Smartnode Setup'
+echo -e 'RTM Smartnode Setup'
 echo -e "===========================================================${NC}"
 echo -e "${RED}September 2022, Updated for MainNet SmartNode${NC}"
 echo -e "${BLUE}July 2021, created and updated by dk808 from AltTank${NC}"
@@ -154,10 +154,13 @@ dbcache=1024
 onlynet=ipv4
 testnet=0
 [Indexes]
-addressindex=1
-assetindex=1
+addressindex=0
+assetindex=0
 index=1
-txindex=1
+txindex=0
+futureindex=0
+[prune]
+prune=950
 EOF
 }
 
