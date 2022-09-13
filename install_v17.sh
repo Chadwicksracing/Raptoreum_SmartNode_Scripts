@@ -170,7 +170,7 @@ function install_bins() {
   fi
   WALLET_TAR='https://github.com/Raptor3um/raptoreum/releases/download/1.13.17.0/raptoreum-ubuntu20-1.3.17.00.tar.gz'
   mkdir temp
-  curl -L $WALLET_TAR | tar xz -C ./temp; sudo mv ./temp/$COIN_DAEMON ./temp/$COIN_CLI ./temp/$COIN_TX $COIN_PATH
+  curl -L $WALLET_TAR | tar xz -C ./temp; sudo mv ./temp/raptoreum-build/$COIN_DAEMON ./temp/raptoreum-build/$COIN_CLI ./temp/raptoreum-build/$COIN_TX $COIN_PATH
   sudo chmod 755 ${COIN_PATH}/${COIN_NAME}*
   rm -rf temp
   wget $POWCACHE $HOME/$CONFIG_DIR/
