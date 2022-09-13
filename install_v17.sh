@@ -177,7 +177,7 @@ function install_bins() {
   sudo chmod 755 ${COIN_PATH}/${COIN_NAME}*
   rm -rf temp
   wget $POWCACHE
-  sudo mv $HOME/powcache.dat $CONFIG_DIR
+  sudo mv $HOME/powcache.dat $CONFIG_DIR/powcache.dat
 }
 
 BOOTSTRAP_ANS=""
