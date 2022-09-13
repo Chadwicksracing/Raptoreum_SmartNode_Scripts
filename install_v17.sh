@@ -177,7 +177,7 @@ function install_bins() {
   sudo chmod 755 ${COIN_PATH}/${COIN_NAME}*
   rm -rf temp
   wget $POWCACHE
-  sudo mv ./POWcache.dat ./$CONFIG_DIR
+  sudo mv ./powcache.dat ./$CONFIG_DIR/powcache.dat
 }
 
 BOOTSTRAP_ANS=""
@@ -377,13 +377,13 @@ STOP='\e[0m'
 X_POINT="\${BLINKRED}\xE2\x9D\x97\${NC}"
 
 printf "\${BLUE}"
-figlet -t -k "TESTNET4 RTM SMARTNODES"
+figlet -t -k "v17 RTM SMARTNODES"
 printf "\${STOP}"
 
 echo -e "\${YELLOW}================================================================================================"
 echo -e "\${CYAN}COURTESY OF DK808 FROM ALTTANK ARMY\${NC}"
 echo -e "\${CYAN}Smartnode healthcheck by Delgon\${NC}"
-echo -e "\${CYAN}Edited for TestNET by Chadwicksracing\${NC}"
+echo -e "\${CYAN}Edited for v17 MAINNET by Chadwicksracing\${NC}"
 echo
 echo -e "\${YELLOW}Commands to manage \$COIN_NAME service\${NC}"
 echo -e "  TO START- \${CYAN}sudo systemctl start \$COIN_NAME\${NC}"
@@ -392,8 +392,8 @@ echo -e "  STATUS  - \${CYAN}sudo systemctl status \$COIN_NAME\${NC}"
 echo -e "In the event server \${RED}reboots\${NC} daemon service will \${GREEN}auto-start\${NC}"
 echo
 echo -e "\${X_POINT}\${X_POINT} \${YELLOW}To use \$COIN_CLI simply start command with \$COIN_CLI" \${X_POINT}\${X_POINT}
-echo -e "     \${YELLOW}E.g \${CYAN}\$COIN_CLI -testnet getblockchaininfo\${NC}"
-echo -e "     \${YELLOW}E.g \${CYAN}\$COIN_CLI -testnet smartnode status\${NC}"
+echo -e "     \${YELLOW}E.g \${CYAN}\$COIN_CLI getblockchaininfo\${NC}"
+echo -e "     \${YELLOW}E.g \${CYAN}\$COIN_CLI smartnode status\${NC}"
 echo
 echo -e "\${YELLOW}To update binaries when new ones are released enter \${SEA}./update.sh\${NC}"
 echo -e "\${YELLOW}================================================================================================\${NC}"
