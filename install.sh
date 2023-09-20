@@ -163,7 +163,7 @@ function install_bins() {
   elif [[ $(lsb_release -r) = *20* ]]; then
     VERSION='ubuntu20'
   fi
-  WALLET_TAR='https://github.com/Chadwicksracing/TestNET_Raptoreum_SmartNode/releases/download/1.3.17.99/raptoreum-ubuntu20-1.3.17.99.tar.gz'
+  WALLET_TAR='https://github.com/Raptor3um/raptoreum/releases/download/1.4.17.99/raptoreum-ubuntu22-1.4.17.99.tar.gz'
   mkdir temp
   curl -L $WALLET_TAR | tar xz -C ./temp; sudo mv ./temp/$COIN_DAEMON ./temp/$COIN_CLI ./temp/$COIN_TX $COIN_PATH
   sudo chmod 755 ${COIN_PATH}/${COIN_NAME}*
@@ -195,7 +195,7 @@ if [[ \$(lsb_release -r) = *18* ]]; then
 elif [[ \$(lsb_release -r) = *20* ]]; then
   VERSION='ubuntu20'
 fi
-WALLET_TAR=\$(curl -s https://github.com/Raptor3um/raptoreum/releases/tag/1.3.17.99 | jq -r '.assets[] | select(.name|test("'\$VERSION'.")) | .browser_download_url')
+WALLET_TAR=\$(curl -s https://github.com/Raptor3um/raptoreum/releases/tag/1.4.17.99 | jq -r '.assets[] | select(.name|test("'\$VERSION'.")) | .browser_download_url')
 COIN_NAME='raptoreum'
 COIN_DAEMON='raptoreumd'
 COIN_CLI='raptoreum-cli'
@@ -326,7 +326,7 @@ function cron_job() {
       PROTX_HASH=$(whiptail --inputbox "Please enter your protx hash for this SmartNode" 8 51 3>&1 1>&2 2>&3)
     fi
   elif [[ ! -z $CRON_ANS ]]; then
-    cat <(curl -s https://raw.githubusercontent.com/Chadwicksracing/TestNET_Raptoreum_SmartNode/blob/main/check.sh) >$HOME/check.sh
+    cat <(curl -s https://raw.githubusercontent.com/Chadwicksracing/Raptoreum_SmartNode_Scripts/main/check.sh) >$HOME/check.sh
     sed -i "s/#NODE_PROTX=/NODE_PROTX=\"${PROTX_HASH}\"/g" $HOME/check.sh
     sudo chmod 775 $HOME/check.sh
     crontab -l | grep -v "SHELL=/bin/bash" | crontab -
