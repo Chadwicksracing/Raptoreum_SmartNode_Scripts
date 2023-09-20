@@ -3,7 +3,7 @@
 URL=( 'https://testnet.raptoreum.com/' )
 URL_ID=0
 
-BOOTSTRAP_TAR='https://github.com/Chadwicksracing/TestNET_Raptoreum_SmartNode/releases/download/1.3.17.99/April_2022_bootstrap.tar.gz'
+BOOTSTRAP_TAR='https://github.com/Chadwicksracing/Raptoreum_SmartNode_Scripts/releases/download/1.3.17.99/April_2022_bootstrap.tar.gz'
 
 POSE_SCORE=0
 PREV_SCORE=0

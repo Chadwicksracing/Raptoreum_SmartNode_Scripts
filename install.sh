@@ -3,10 +3,10 @@
 COIN_NAME='raptoreum'
 
 #wallet information
-BOOTSTRAP_TAR='https://github.com/Chadwicksracing/TestNET_Raptoreum_SmartNode/releases/download/1.3.17.99/April_2022_bootstrap.tar.gz'
+BOOTSTRAP_TAR='https://github.com/Chadwicksracing/Raptoreum_SmartNode_Scripts/releases/download/1.3.17.99/April_2022_bootstrap.tar.gz'
 CONFIG_DIR='.raptoreumcore'
 CONFIG_FILE='raptoreum.conf'
-PORT='10228'
+PORT='10229'
 SSHPORT='22'
 COIN_DAEMON='raptoreumd'
 COIN_CLI='raptoreum-cli'
@@ -34,7 +34,8 @@ X_POINT="${BLINKRED}\xE2\x9D\x97${NC}"
 echo -e "${YELLOW}==========================================================="
 echo -e 'TESTNET RTM Smartnode Setup'
 echo -e "===========================================================${NC}"
-echo -e "${RED}April 2022, Updated for TestNet SmartNode${NC}"
+echo -e "${RED}Sept 2023, Updated for TestNet V4 SmartNode${NC}"
+echo -e "${RED}April 2022, Updated for TestNet V3 SmartNode${NC}"
 echo -e "${BLUE}July 2021, created and updated by dk808 from AltTank${NC}"
 echo -e "${BLUE}With Smartnode healthcheck by Delgon${NC}"
 echo -e
